@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team und Neuigkeiten</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Neuigkeiten Styles (direkt eingebaut) */
+        .news-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .news-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        .news-item:hover {
+            transform: scale(1.02);
+        }
+        .news-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .news-date {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        .news-content {
+            font-size: 1.1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body class="about-page">
+
+<!-- Hamburger-Button -->
+<div class="hamburger-menu" onclick="toggleNav()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<header>
+    <h1 style="font-size: 100px;">Neuigkeiten</h1>
+    <h3 style="font-size: 60px;">Hier wird immer die letzte Neuigkeit des Servers geteilt.</h3>
+</header>
+
+<div class="content">
+    <p style="font-weight: bold;"></p>
+    <p></p>
+</div>
+
+<!-- Neuigkeiten Sektion -->
+<section class="news-container" id="news-container">
+    <!-- Neuigkeiten werden hier mit JavaScript eingefügt -->
+</section>
+
+<div id="side-nav" class="side-nav">
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+    <a href="links.html">Link</a>
+    <a href="neuigkeiten.html">Neuigkeiten</a>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // News-Daten
+    const newsList = [
+        {
+            title: "🐉🌸 Das Erwachen des Frühlingsdrachen – Mystanias erstes großes Bauevent! 🌸🐉",
+            date: "28. April 2025",
+            content: `
+                Baumeister Mystanias,<br><br>
+                die Zeit ist gekommen, eure Kreativität zu entfesseln! ✨<br><br>
+                Mit dem ersten großen Bauevent auf unserem Server rufen wir euch zu den Werkzeugen, um dem Frühlingsdrachen neues Leben einzuhauchen!<br>
+                <strong>Das Thema lautet:</strong> „Erwachen des Frühlingsdrachen“ – zeigt uns, wie ihr euch dieses magische Erwachen in der Welt von Mystania vorstellt! 🌿🔥<br><br>
+                🎨 <strong>Event-Infos:</strong><br>
+                🏰 Baut auf einem einzelnen Plot – Das Motto: Das Erwachen des Frühlingsdrachen<br>
+                🕰️ Start: Jetzt!<br>
+                📅 Einsendeschluss: 09.05. um 20:00 Uhr<br>
+                📸 Reicht eure Plot-ID (mit oder ohne Screenshot) im neuen #bauevent-Channel ein!<br><br>
+                <em>Wichtig:</em> Wir wollen eure kreativen Bauwerke bewundern und keine Schematics! Sollten diese klar ersichtlich sein, wird das jeweilige Plot aus der Wertung ausgeschlossen.<br><br>
+                🏆 <strong>Preise:</strong><br>
+                Die besten Bauwerke erhalten wertvolle Belohnungen – und bei außergewöhnlichen Plots winkt sogar ein legendäres Spawn-Plot!<br><br>
+                Zeigt Mystania, was in euch steckt – lasst den Frühlingsdrachen durch eure Fantasie erwachen und verewigt euch als Meisterbauer! 🔮<br><br>
+                <strong>Euer Mystania Team</strong>
+            `
+        },
+        // Weitere News kannst du hier drunter einfügen:
+    ];
+
+    const container = document.getElementById('news-container');
+
+    newsList.forEach(news => {
+        const newsItem = document.createElement('div');
+        newsItem.className = 'news-item';
+
+        newsItem.innerHTML = `
+            <div class="news-title">${news.title}</div>
+            <div class="news-date">${news.date}</div>
+            <div class="news-content">${news.content}</div>
+        `;
+
+        container.appendChild(newsItem);
+    });
+</script>
+
+
+</body>
+</html>
